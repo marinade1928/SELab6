@@ -1,0 +1,143 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > PersonValidator</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.unittest.codecoverage.models.validators</a>
+</div>
+
+<h1>Coverage Summary for Class: PersonValidator (com.unittest.codecoverage.models.validators)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonValidator</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.9%
+  </span>
+  <span class="absValue">
+    (10/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.unittest.codecoverage.models.validators;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;import java.util.List;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;import com.unittest.codecoverage.exceptions.PersonException;
+<i class="no-highlight">7</i>&nbsp;import com.unittest.codecoverage.models.Person;
+<i class="no-highlight">8</i>&nbsp;
+<b class="fc"><i class="no-highlight">9</i>&nbsp;public class PersonValidator {</b>
+<i class="no-highlight">10</i>&nbsp;	
+<i class="no-highlight">11</i>&nbsp;	public boolean requiredName(Person person) {
+<b class="fc"><i class="no-highlight">12</i>&nbsp;		return person != null &amp;&amp; person.getName() != null &amp;&amp; person.getName().trim().length() &gt; 0;</b>
+<i class="no-highlight">13</i>&nbsp;	}
+<i class="no-highlight">14</i>&nbsp;	
+<i class="no-highlight">15</i>&nbsp;	public boolean requiredName(String name) {
+<b class="nc"><i class="no-highlight">16</i>&nbsp;		return name != null &amp;&amp; name.trim().length() &gt; 0;</b>
+<i class="no-highlight">17</i>&nbsp;	}
+<i class="no-highlight">18</i>&nbsp;	
+<i class="no-highlight">19</i>&nbsp;	public boolean requiredGender(Person person) {
+<b class="fc"><i class="no-highlight">20</i>&nbsp;		return person != null &amp;&amp; person.getGender() != null;</b>
+<i class="no-highlight">21</i>&nbsp;	}
+<i class="no-highlight">22</i>&nbsp;	
+<i class="no-highlight">23</i>&nbsp;	public void validate(Person person) {
+<b class="fc"><i class="no-highlight">24</i>&nbsp;		List&lt;String&gt; errors = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;		if(!requiredName(person)) {</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;			errors.add(&quot;Name is required&quot;);</b>
+<i class="no-highlight">27</i>&nbsp;		}
+<i class="no-highlight">28</i>&nbsp;		
+<b class="fc"><i class="no-highlight">29</i>&nbsp;		if(!requiredGender(person)) {</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;			errors.add(&quot;Gender is required&quot;);</b>
+<i class="no-highlight">31</i>&nbsp;		}
+<i class="no-highlight">32</i>&nbsp;		
+<b class="fc"><i class="no-highlight">33</i>&nbsp;		if (!errors.isEmpty()) {</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;			throw new PersonException(errors);</b>
+<i class="no-highlight">35</i>&nbsp;		}
+<i class="no-highlight">36</i>&nbsp;	}
+<i class="no-highlight">37</i>&nbsp;	
+<i class="no-highlight">38</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-11-26 17:54</div>
+</div>
+</body>
+</html>
